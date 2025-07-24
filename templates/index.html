@@ -68,13 +68,16 @@
                     <h6 class="fw-bold text-primary mb-3">Conversation History:</h6>
                     <div class="d-flex flex-column gap-3">
                         {% for turn in chat_history %}
-                            <div class="d-flex justify-content-start">
-                                <div class="p-3 rounded-3 text-dark" style="background-color: #d4edda; max-width: 75%;">
+                            <!-- User message (right aligned) -->
+                            <div class="d-flex justify-content-end">
+                                <div class="p-3 rounded-3 text-dark text-end" style="background-color: #d4edda; max-width: 75%;">
                                     <strong class="text-success">You:</strong> {{ turn.user }}
                                 </div>
                             </div>
+
+                            <!-- Agent message (left aligned) -->
                             <div class="d-flex justify-content-start">
-                                <div class="p-3 rounded-3 text-dark" style="background-color: #cfe2ff; max-width: 75%;">
+                                <div class="p-3 rounded-3 text-dark" style="background-color: #ffa836; max-width: 75%;">
                                     <strong class="text-primary">Agent:</strong> {{ turn.agent }}
                                 </div>
                             </div>
